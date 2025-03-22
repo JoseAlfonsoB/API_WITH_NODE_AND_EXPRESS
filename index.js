@@ -43,6 +43,19 @@ app.get("/books/:id", (req, res) => { /** FUNCIÓN CALLBACK */
     res.json(book);
 });
 
+//* Endpoint para crear un nuevo libro
+app.post("/books", (req, res) => {
+    const data = readData();
+    const body = req.body;
+    const newBook = {
+        id: data.books.length + 1,
+        ...body, //Se le asigna un id al nuevo libro aumentando en 1 al id anterior
+    };
+    data.books.push(newBook);
+    writeData(data);
+    res.json(newBook);
+});
+
 app.get("/", (req, res) => {
     res.send("This is my first project with Express!");
 });

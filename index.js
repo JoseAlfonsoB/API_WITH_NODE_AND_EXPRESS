@@ -35,6 +35,14 @@ app.get("/books", (req, res) => {
     res.json(data.books);
 });
 
+//* Endpoint para obtener un libro por su id
+app.get("/books/:id", (req, res) => { /** FUNCIÓN CALLBACK */
+    const data = readData();
+    const id = parseInt(req.params.id); //Se formatea el texto porque originalmente viene como un String
+    const book = data.books.find((book) => book.id === id);
+    res.json(book);
+});
+
 app.get("/", (req, res) => {
     res.send("This is my first project with Express!");
 });

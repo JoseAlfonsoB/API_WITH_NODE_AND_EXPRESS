@@ -27,6 +27,14 @@ const writeData = (data) => {
     }
 };// Fin de las funciones para leer y escribir datos en un archivo JSON
 
+//! Endpoints de la API
+
+//* Endpoint para obtener todos los datos (libros) de la base de datos
+app.get("/books", (req, res) => {
+    const data = readData();
+    res.json(data.books);
+});
+
 app.get("/", (req, res) => {
     res.send("This is my first project with Express!");
 });

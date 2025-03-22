@@ -25,7 +25,7 @@ const writeData = (data) => {
     } catch (error) {
         console.log("Error con la escritura de archivos!", error);
     }
-};// Fin de las funciones para leer y escribir datos en un archivo JSON
+};// <-- Fin de las funciones para leer y escribir datos en un archivo JSON
 
 //! Endpoints de la API
 
@@ -69,6 +69,17 @@ app.put("/books/:id", (req, res) => {
     writeData(data);
     res.json({ message: "Libro actualizado correctamente" }); //Se envía un mensaje de confirmación
 });
+
+//* Endpoint para eliminar un libro
+app.delete("/books/:id", (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+    const bookIndex = data.books.findIndex((book) => book.id === id);
+    data.books.splice(bookIndex, 1); //Se elimina el libro del array
+    writeData(data);
+    res.json({ message: "Libro eliminado correctamente" }); //Se envía un mensaje de confirmación
+});
+// <-- Fin de los endpoints para la API
 
 app.get("/", (req, res) => {
     res.send("This is my first project with Express!");

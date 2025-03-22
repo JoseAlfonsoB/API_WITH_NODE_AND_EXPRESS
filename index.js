@@ -3,6 +3,9 @@ import fs from 'fs';//file system module nos permite leer y escribir archivos de
 
 const app = express();
 
+// Middleware para parsear el body de las solicitudes en formato JSON
+app.use(express.json());
+
 //! Funcinoes para leer y escribir datos en un archivo JSON
 
 //* Función para leer datos del archivo db.json

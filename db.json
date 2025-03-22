@@ -11,6 +11,12 @@
             "title": "Jurassic Park",
             "author": "Michael Crichton",
             "year": 1990
+        },
+        {
+            "id": 3,
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "year": 1937
         }
     ]
 }

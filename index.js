@@ -56,6 +56,20 @@ app.post("/books", (req, res) => {
     res.json(newBook);
 });
 
+//* Endpoint para actualizar un libro
+app.put("/books/:id", (req, res) => {
+    const data = readData();
+    const body = req.body;
+    const id = parseInt(req.params.id);
+    const bookIndex = data.books.findIndex((book) => book.id === id);
+    data.books[bookIndex] = {
+        ...data.books[bookIndex],
+        ...body,
+    }; //Se actualiza el libro con los nuevos datos
+    writeData(data);
+    res.json({ message: "Libro actualizado correctamente" }); //Se envía un mensaje de confirmación
+});
+
 app.get("/", (req, res) => {
     res.send("This is my first project with Express!");
 });

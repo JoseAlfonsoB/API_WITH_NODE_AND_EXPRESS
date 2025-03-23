@@ -1,1 +1,22 @@
-{"books":[{"id":1,"title":"Harry Potter and the Philosopher's Stone","author":"J.K. Rowling","year":1997},{"id":2,"title":"Jurassic Park","author":"Michael Crichton","year":1990},{"id":3,"title":"The Da Vinci Code","author":"Dan Brown","year":2003}]}
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Harry Potter and the Philosopher's Stone",
+            "author": "J.K. Rowling",
+            "year": 1997
+        },
+        {
+            "id": 2,
+            "title": "Jurassic Park",
+            "author": "Michael Crichton",
+            "year": 1990
+        },
+        {
+            "id": 3,
+            "title": "The Da Vinci Code",
+            "author": "Dan Brown",
+            "year": 2003
+        }
+    ]
+}
